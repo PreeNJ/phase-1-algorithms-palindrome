@@ -1,14 +1,21 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  // Convert to lowercase to handle any capitalization
+  word = word.toLowerCase();
+  
+  // Compare characters from start and end moving towards center
+  let left = 0;
+  let right = word.length - 1;
+  
+  while (left < right) {
+    if (word[left] !== word[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  
+  return true;
 }
-
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
